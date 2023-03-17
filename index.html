@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="https://getform.io/f/bcf5db72-9ce8-4fe8-b0ad-7404bc9acc70" method="POST">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="text" id="phone" name="phone" value="8326606067"><br><br>
+  <div id="contact-information"></div>
+  <input type="submit" value="Submit">
+</form> 
+</body>
+</html>
+
+
+<!-- NEEDS TO BE ADDED TO THE THANK YOU PAGE SECTION BELOW -->
+<script type="text/javascript" src="https://cdn.attn.tv/dennybydenny/dtag.js"></script>
+<script>
+
+
+    (function () {
+        // insert JS code in custom JS section of Recharge settings
+        // Append scripts for checkout to head
+        var checkoutScript = document.createElement('script');
+        checkoutScript.type = 'text/javascript';
+        checkoutScript.src = 'https://cdn.attn.tv/checkout/checkout.js';
+        checkoutScript.defer = true;
+        document.getElementsByTagName('head')[0].appendChild(checkoutScript);
+
+        function loadCustomCheckout() {
+
+
+            // Create new main wrapper element
+            var mainTransactionalWrapperDiv = document.createElement('div');
+            mainTransactionalWrapperDiv.setAttribute('id', 'attnRechargeTransactionalOptIn');
+            mainTransactionalWrapperDiv.setAttribute('class', 'fieldset-description');
+            mainTransactionalWrapperDiv.setAttribute('aria-label', 'Phone Sign Up');
+
+            // Create new styling container and append to wrapper container
+            var mainTransactionalStylingDiv = document.createElement('div');
+            mainTransactionalStylingDiv.setAttribute('class', 'section__content section__content__attentive');
+            mainTransactionalWrapperDiv.appendChild(mainTransactionalStylingDiv);
+
+            // Create new checkbox container and append to styling container
+            var mainTransactionalCheckboxDiv = document.createElement('div');
+            mainTransactionalCheckboxDiv.setAttribute('class', 'checkbox-wrapper');
+            mainTransactionalStylingDiv.appendChild(mainTransactionalCheckboxDiv);
+
+            // Create new input container and append to checkbox container
+            var mainTransactionalInputDiv = document.createElement('div');
+            mainTransactionalInputDiv.setAttribute('class', 'checkbox__input');
+            mainTransactionalCheckboxDiv.appendChild(mainTransactionalInputDiv);
+
+            // Create new inputs and append to input container
+            var inputTransactionalElement1 = document.createElement('input');
+            inputTransactionalElement1.setAttribute('name', 'attributes=[buyer_accepts_transactional_attentive]');
+            inputTransactionalElement1.setAttribute('type', 'hidden');
+            inputTransactionalElement1.setAttribute('value', '0');
+            mainTransactionalInputDiv.appendChild(inputTransactionalElement1);
+
+            var inputTransactionalElement2 = document.createElement('input');
+            inputTransactionalElement2.setAttribute('id', 'checkout_buyer_accepts_transactional_attentive');
+            inputTransactionalElement2.setAttribute('class', 'input-checkbox');
+            inputTransactionalElement2.setAttribute('name', 'attributes=[buyer_accepts_transactional_attentive]');
+            inputTransactionalElement2.setAttribute('type', 'checkbox');
+            inputTransactionalElement2.setAttribute('value', '1');
+            inputTransactionalElement2.setAttribute('focusable', 'true');
+            inputTransactionalElement2.setAttribute('tabindex', '0');
+            inputTransactionalElement2.setAttribute('data-backup', 'buyer_accepts_transactional');
+            inputTransactionalElement2.setAttribute('aria-labelledby', 'headers');
+            // Transactional checkbox is checked by default
+            if (true) {
+                inputTransactionalElement2.setAttribute('checked', '');
+            }
+            mainTransactionalInputDiv.appendChild(inputTransactionalElement2);
+
+            var inputTransactionalLabelDiv = document.createElement('div');
+            inputTransactionalLabelDiv.setAttribute('class', 'checkbox__label checkbox__label__attentive');
+            mainTransactionalCheckboxDiv.appendChild(inputTransactionalLabelDiv);
+
+            var labelTransactionalHeadersSpan = document.createElement('span');
+            labelTransactionalHeadersSpan.setAttribute('id', 'headers');
+            labelTransactionalHeadersSpan.setAttribute('focusable', 'true');
+            labelTransactionalHeadersSpan.setAttribute('tabindex', '0');
+            inputTransactionalLabelDiv.appendChild(labelTransactionalHeadersSpan);
+
+            var labelTransactionalHeaderDiv = document.createElement('div');
+            var headerTransactionalText = document.createTextNode("Get SMS alerts about your subscriptions");
+            labelTransactionalHeaderDiv.appendChild(headerTransactionalText);
+            labelTransactionalHeaderDiv.setAttribute('class', 'checkbox__label__attentive__header');
+            labelTransactionalHeadersSpan.appendChild(labelTransactionalHeaderDiv);
+
+            var labelTransactionalSubheaderDiv = document.createElement('div');
+            var subheaderTransactionalText = document.createTextNode("Stay up to date on your subscriptions");
+            labelTransactionalSubheaderDiv.appendChild(subheaderTransactionalText);
+            labelTransactionalSubheaderDiv.setAttribute('class', 'checkbox__label__attentive__subheader');
+            labelTransactionalHeadersSpan.appendChild(labelTransactionalSubheaderDiv);
+
+            // Get the node referencing the contact-information section and append new checkboxes
+            var contactInformationDiv = document.getElementById('contact-information');
+            contactInformationDiv.appendChild(mainTransactionalWrapperDiv);
+
+
+        }
+
+        document.addEventListener("DOMContentLoaded", loadCustomCheckout);
+    }())
+
+</script>
