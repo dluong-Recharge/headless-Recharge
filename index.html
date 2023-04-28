@@ -1,113 +1,101 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <h2>Basics</h2>
+    <p>Create a product: Do this within Postman/Merchant Portal</p>
+    <p>Create a new customer: Do this within Postman/Merchant Portal</p>
+    <p>Create a new address: Do this within Postman/Merchant Portal</p>
+    <p>All Customers with associated addresses</p>
+    <p>Available Payment Methods (Stripe/Braintree)</p>
+    <p>⭕️ Start a subscription: Use Form Below</p>
+    <p>Update a order</p>
 
-<h2>HTML Forms</h2>
+    <h2>Create a product: Send Form Data to Middleware Server -> Pipedream to POST to API</h2>
+    <form action="https://submit-form.com/m4w86BH9">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required="" />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required="" />
+        <label for="message">Message</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            required=""
+        ></textarea>
+        <button type="submit">Send</button>
+    </form>
 
-<form action="https://getform.io/f/bcf5db72-9ce8-4fe8-b0ad-7404bc9acc70" method="POST">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-  <input type="text" id="phone" name="phone" value="8326606067"><br><br>
-  <div id="contact-information"></div>
-  <input type="submit" value="Submit">
-</form> 
+    <h2>Create a customer: Send Form Data to Middleware Server -> Pipedream to POST to API</h2>
+    <form action="https://submit-form.com/lukyHC2s">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required="" />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required="" />
+        <label for="message">Message</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            required=""
+        ></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+
+    <h2>HTML Form with Getform.io integration</h2>
+    <form action="https://getform.io/f/bcf5db72-9ce8-4fe8-b0ad-7404bc9acc70" method="POST">
+        <!-- <div>
+        <label for="customers">Choose a customer:</label> <br>
+        <select name="customers" id="customers">
+            <option value="107674618">Vlad Dracula (ID: 107674618)</option>
+            <option value="101284203">Denny Luong (ID: 101284203)</option>
+            <option value="101219367">Jason Voorhees (ID: 101219367)</option>
+        </select>
+        </div> -->
+        <br>
+        <div>
+        <label for="addresses">Choose an address:</label> <br>
+        <select name="addresses" id="addresses">
+            <option value="118097612">Vlad Dracula (Address ID: 118097612)</option>
+            <option value="111100014">Denny Luong (Address ID: 111100014)</option>
+            <option value="111030216">Jason Voorhees (Address ID: 111030216)</option>
+        </select>
+        </div>
+        <br>
+        <div>
+        <label for="products">Select a product (this will send the variant ID):</label><br>
+        <select name="products" id="products">
+            <option value="666">Dracula's Bed (Variant ID: 666)</option>
+            <option value="131313">Newb Kit (Variant ID: 131313)</option>
+            <option value="999">Bodyless Skulls (Variant ID: 999)</option>
+        </select>
+        </div>
+        <br>
+        <label for="product_title">Give a product title or use default product title:</label><br>
+        <input type="text" id="product_title" name="product_title" required>
+        <br>
+        <label for="product_price">Give a product price:</label><br>
+        <input type="number" id="product_price" name="product_price" value="3"><br>
+        <label for="product_quantity">Give a product quantity</label><br>
+        <input type="number" id="product_quantity" name="product_quantity" value=1><br>
+        <label for="line_item_properties">
+            Line Item Properties "properties": [{
+                "name": "offer_code",
+                "value": "DEFAULT_CODE"
+            },{
+                "name": "bundle_id",
+                "value": "DEFAULT_ID"
+            }]
+        </label><br>
+        <input type="text" id="line_item_properties" name="line_item_properties" placeholder=""><br>
+        <label for="charge_date">Provide next charge date (yyyy-mm-dd):</label><br>
+        <input type="text" id="charge_date" name="charge_date" placeholder="select charge date" required><br>
+        <input type="checkbox" id="free_gift" name="free_gift" value="yes">
+        <label for="free_gift">Include Free Gift? Check for yes</label><br>
+        <input type="submit" value="Submit">
+    </form> 
 </body>
 </html>
 
 
-<!-- NEEDS TO BE ADDED TO THE THANK YOU PAGE SECTION BELOW -->
-<script type="text/javascript" src="https://cdn.attn.tv/dennybydenny/dtag.js"></script>
-<script>
-
-
-    (function () {
-        // insert JS code in custom JS section of Recharge settings
-        // Append scripts for checkout to head
-        var checkoutScript = document.createElement('script');
-        checkoutScript.type = 'text/javascript';
-        checkoutScript.src = 'https://cdn.attn.tv/checkout/checkout.js';
-        checkoutScript.defer = true;
-        document.getElementsByTagName('head')[0].appendChild(checkoutScript);
-
-        function loadCustomCheckout() {
-
-
-            // Create new main wrapper element
-            var mainTransactionalWrapperDiv = document.createElement('div');
-            mainTransactionalWrapperDiv.setAttribute('id', 'attnRechargeTransactionalOptIn');
-            mainTransactionalWrapperDiv.setAttribute('class', 'fieldset-description');
-            mainTransactionalWrapperDiv.setAttribute('aria-label', 'Phone Sign Up');
-
-            // Create new styling container and append to wrapper container
-            var mainTransactionalStylingDiv = document.createElement('div');
-            mainTransactionalStylingDiv.setAttribute('class', 'section__content section__content__attentive');
-            mainTransactionalWrapperDiv.appendChild(mainTransactionalStylingDiv);
-
-            // Create new checkbox container and append to styling container
-            var mainTransactionalCheckboxDiv = document.createElement('div');
-            mainTransactionalCheckboxDiv.setAttribute('class', 'checkbox-wrapper');
-            mainTransactionalStylingDiv.appendChild(mainTransactionalCheckboxDiv);
-
-            // Create new input container and append to checkbox container
-            var mainTransactionalInputDiv = document.createElement('div');
-            mainTransactionalInputDiv.setAttribute('class', 'checkbox__input');
-            mainTransactionalCheckboxDiv.appendChild(mainTransactionalInputDiv);
-
-            // Create new inputs and append to input container
-            var inputTransactionalElement1 = document.createElement('input');
-            inputTransactionalElement1.setAttribute('name', 'attributes=[buyer_accepts_transactional_attentive]');
-            inputTransactionalElement1.setAttribute('type', 'hidden');
-            inputTransactionalElement1.setAttribute('value', '0');
-            mainTransactionalInputDiv.appendChild(inputTransactionalElement1);
-
-            var inputTransactionalElement2 = document.createElement('input');
-            inputTransactionalElement2.setAttribute('id', 'checkout_buyer_accepts_transactional_attentive');
-            inputTransactionalElement2.setAttribute('class', 'input-checkbox');
-            inputTransactionalElement2.setAttribute('name', 'attributes=[buyer_accepts_transactional_attentive]');
-            inputTransactionalElement2.setAttribute('type', 'checkbox');
-            inputTransactionalElement2.setAttribute('value', '1');
-            inputTransactionalElement2.setAttribute('focusable', 'true');
-            inputTransactionalElement2.setAttribute('tabindex', '0');
-            inputTransactionalElement2.setAttribute('data-backup', 'buyer_accepts_transactional');
-            inputTransactionalElement2.setAttribute('aria-labelledby', 'headers');
-            // Transactional checkbox is checked by default
-            if (true) {
-                inputTransactionalElement2.setAttribute('checked', '');
-            }
-            mainTransactionalInputDiv.appendChild(inputTransactionalElement2);
-
-            var inputTransactionalLabelDiv = document.createElement('div');
-            inputTransactionalLabelDiv.setAttribute('class', 'checkbox__label checkbox__label__attentive');
-            mainTransactionalCheckboxDiv.appendChild(inputTransactionalLabelDiv);
-
-            var labelTransactionalHeadersSpan = document.createElement('span');
-            labelTransactionalHeadersSpan.setAttribute('id', 'headers');
-            labelTransactionalHeadersSpan.setAttribute('focusable', 'true');
-            labelTransactionalHeadersSpan.setAttribute('tabindex', '0');
-            inputTransactionalLabelDiv.appendChild(labelTransactionalHeadersSpan);
-
-            var labelTransactionalHeaderDiv = document.createElement('div');
-            var headerTransactionalText = document.createTextNode("Get SMS alerts about your subscriptions");
-            labelTransactionalHeaderDiv.appendChild(headerTransactionalText);
-            labelTransactionalHeaderDiv.setAttribute('class', 'checkbox__label__attentive__header');
-            labelTransactionalHeadersSpan.appendChild(labelTransactionalHeaderDiv);
-
-            var labelTransactionalSubheaderDiv = document.createElement('div');
-            var subheaderTransactionalText = document.createTextNode("Stay up to date on your subscriptions");
-            labelTransactionalSubheaderDiv.appendChild(subheaderTransactionalText);
-            labelTransactionalSubheaderDiv.setAttribute('class', 'checkbox__label__attentive__subheader');
-            labelTransactionalHeadersSpan.appendChild(labelTransactionalSubheaderDiv);
-
-            // Get the node referencing the contact-information section and append new checkboxes
-            var contactInformationDiv = document.getElementById('contact-information');
-            contactInformationDiv.appendChild(mainTransactionalWrapperDiv);
-
-
-        }
-
-        document.addEventListener("DOMContentLoaded", loadCustomCheckout);
-    }())
-
-</script>
