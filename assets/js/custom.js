@@ -86,7 +86,11 @@ document.getElementById("checkoutBtn").addEventListener("click", function() {
 
     // Log or use the generated JSON data
     console.log(jsonData);
-
+    
+// ____ ____ ___  _    ____ ____ ____    _ _ _ _ ___ _  _    _   _ ____ _  _ ____    ___  _ ___  ____ ___  ____ ____ ____ _  _    ____ _  _ ___  ___  ____ _ _  _ ___ 
+// |__/ |___ |__] |    |__| |    |___    | | | |  |  |__|     \_/  |  | |  | |__/    |__] | |__] |___ |  \ |__/ |___ |__| |\/|    |___ |\ | |  \ |__] |  | | |\ |  |  
+// |  \ |___ |    |___ |  | |___ |___    |_|_| |  |  |  |      |   |__| |__| |  \    |    | |    |___ |__/ |  \ |___ |  | |  |    |___ | \| |__/ |    |__| | | \|  |  
+                                                                                                                                                                   
     // Send the JSON data to the endpoint using Fetch API
     fetch('https://e8928c22c041bf50dc1022d105c1d4e3.m.pipedream.net', {
         method: 'POST',
